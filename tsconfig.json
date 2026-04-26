@@ -1,0 +1,15 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["react-native", "jest"]
+  },
+  "include": ["src", "app", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "scripts"]
+}

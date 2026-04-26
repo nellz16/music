@@ -1,0 +1,66 @@
+{
+  "name": "expo-music-player",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "start:prod": "expo start --no-dev --minify",
+    "android": "expo run:android",
+    "test": "jest --watchAll=false --passWithNoTests",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage --passWithNoTests",
+    "lint": "eslint src --ext .ts,.tsx",
+    "optimize:images": "node scripts/optimize-images.js",
+    "build:apk:preview": "eas build --platform android --profile preview",
+    "build:apk:production": "eas build --platform android --profile production",
+    "build:apk:local": "eas build --platform android --profile preview --local",
+    "diagnostic:memory": "adb shell dumpsys meminfo com.yourcompany.expomusic",
+    "diagnostic:fps": "adb shell dumpsys gfxinfo com.yourcompany.expomusic"
+  },
+  "dependencies": {
+    "expo": "~53.0.0",
+    "expo-av": "~15.1.0",
+    "expo-file-system": "~18.1.0",
+    "expo-status-bar": "~2.2.3",
+    "expo-router": "~4.0.0",
+    "expo-splash-screen": "~0.29.0",
+    "expo-image": "~2.0.7",
+    "expo-network": "~6.1.0",
+    "react": "18.3.2",
+    "react-native": "0.76.5",
+    "@react-native-async-storage/async-storage": "2.1.2",
+    "react-native-safe-area-context": "4.14.0",
+    "react-native-screens": "~4.4.0",
+    "@react-navigation/native": "^7.0.0",
+    "@react-navigation/native-stack": "^7.0.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.0",
+    "@types/react": "~18.3.0",
+    "@types/react-native": "^0.72.0",
+    "jest": "^29.7.0",
+    "jest-expo": "~53.0.0",
+    "babel-jest": "^29.7.0",
+    "@testing-library/react-native": "^12.4.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "sharp": "^0.33.0"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "testMatch": [
+      "**/__tests__/**/*.test.[jt]s?(x)"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|zustand)"
+    ],
+    "setupFilesAfterEach": [],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
+  },
+  "private": true
+}
